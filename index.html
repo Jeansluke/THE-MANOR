@@ -68,6 +68,18 @@ ul.b{margin:0 0 16px 22px}ul.b li{margin-bottom:6px}
 .see{display:flex;flex-wrap:wrap;gap:10px}
 .see a{font:14px system-ui,sans-serif;padding:7px 14px;border:1px solid var(--line);border-radius:20px;text-decoration:none;background:var(--panel)}
 .see a:hover{border-color:var(--red)}
+.q{list-style:none;counter-reset:q}.q li{counter-increment:q;padding:12px 16px 12px 52px;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}.q li::before{content:counter(q);position:absolute;left:14px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font:700 13px/26px system-ui,sans-serif;text-align:center}
+dl.g{display:grid;grid-template-columns:max-content 1fr;gap:0 22px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 18px}dl.g dt,dl.g dd{padding:10px 0;border-bottom:1px solid var(--line)}dl.g dt{font:700 14px system-ui,sans-serif;color:var(--red)}dl.g dt:last-of-type,dl.g dd:last-of-type{border:0}
+.badge{font:700 10px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:var(--mute);margin-left:6px}
+.tbl{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:12px 0}table{width:100%;border-collapse:collapse;font:14px/1.5 system-ui,sans-serif}th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}tr:last-child td{border:0}th{color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.pill{display:inline-block;font:700 11px system-ui,sans-serif;padding:2px 9px;border-radius:20px;border:1px solid currentColor;white-space:nowrap}.ok{color:#2e9e5b}.sus{color:#d29a1e}.no{color:var(--red)}
+.stat{display:grid;grid-template-columns:100px 1fr 44px;gap:12px;align-items:center;margin:9px 0;font:14px system-ui,sans-serif}.trk{height:12px;background:var(--panel2);border-radius:6px;overflow:hidden}.trk i{display:block;height:100%;background:var(--red);width:calc(var(--w)*1%)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:14px 0}.nums div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}.nums b{display:block;font:800 30px system-ui,sans-serif;color:var(--red)}.nums span{font:12px system-ui,sans-serif;color:var(--mute)}
+.qt{display:grid;gap:10px}.qt p{margin:0;padding:12px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;font-style:italic}.qt small{display:block;font:12px system-ui,sans-serif;color:var(--mute);font-style:normal}
+details.faq{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:12px 16px}details.faq summary{cursor:pointer;font:600 15px system-ui,sans-serif}details.faq p{margin:10px 0 0;color:var(--mute);font-size:16px}
+.chk label{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer;font:15px/1.5 system-ui,sans-serif}.chk input{accent-color:var(--red);margin-top:4px}.chk input:checked+span{text-decoration:line-through;color:var(--mute)}#prog{font:600 13px system-ui,sans-serif;color:var(--mute);margin-top:6px}
+.qz{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}.qz h3{margin:0 0 10px;font-size:16px}.qz button{display:block;width:100%;text-align:left;margin-bottom:6px;padding:10px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font:15px system-ui,sans-serif;cursor:pointer}.qz button:hover{border-color:var(--red)}.qz button.right{border-color:#2e9e5b;background:rgba(46,158,91,.18)}.qz button.wrong{border-color:var(--red);background:var(--glow)}#score{font:700 18px system-ui,sans-serif;color:var(--red)}
+.oldbtn{background:var(--red);color:#fff;border-radius:20px;padding:6px 14px;font:700 13px system-ui,sans-serif;text-decoration:none;white-space:nowrap;transition:transform .2s,box-shadow .2s}.oldbtn:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--glow)}
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--mute);font:13px system-ui,sans-serif}
 @media(max-width:900px){.wrap{grid-template-columns:1fr}aside{display:none}.top{grid-template-columns:1fr}.infobox{order:-1}.logo{display:none}}
 @media(prefers-reduced-motion:reduce){h1{animation:none}html{scroll-behavior:auto}}
@@ -77,13 +89,14 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <div id="bar"></div>
 <header><div class="hd">
 <a class="logo" href="#top">Horror Wiki</a>
-<nav><a href="#overview">Overview</a><a href="#incident">Incident</a><a href="#evidence">Evidence</a><a href="#figures">Figures</a><a href="#layout">Layout</a><a href="#timeline">Timeline</a><a href="#status">Status</a></nav>
+<nav><a href="#overview">Overview</a><a href="#incident">Incident</a><a href="#evidence">Evidence</a><a href="#figures">Figures</a><a href="#layout">Layout</a><a href="#analysis">Analysis</a><a href="#theories">Theories</a><a href="#timeline">Timeline</a><a href="#status">Status</a><a href="#faq">FAQ</a><a href="#quiz">Quiz</a></nav>
+<a class="oldbtn" href="https://jeansluke.github.io/THE-MANOR/old" target="_blank" rel="noopener noreferrer">← Old Wiki</a>
 <button id="theme" class="ui" aria-label="Toggle theme">◐ Theme</button>
 </div></header>
 
 <div class="wrap" id="top">
 <aside><h4>On this page</h4>
-<a href="#overview">Overview</a><a href="#incident">The June 19th Incident</a><a href="#evidence">Chat Log Evidence</a><a href="#figures">Key Figures</a><a href="#recent">Recent Developments</a><a href="#layout">Layout &amp; Architecture</a><a href="#timeline">Timeline</a><a href="#status">Current Status</a><a href="#see">See Also</a></aside>
+<a href="#overview">Overview</a><a href="#incident">The June 19th Incident</a><a href="#evidence">Chat Log Evidence</a><a href="#figures">Key Figures</a><a href="#recent">Recent Developments</a><a href="#layout">Layout &amp; Architecture</a><a href="#analysis">Evidence Analysis</a><a href="#rooms">Rooms &amp; Areas</a><a href="#quotes">Notable Quotes</a><a href="#questions">Open Questions</a><a href="#theories">Theories</a><a href="#glossary">Glossary</a><a href="#timeline">Timeline</a><a href="#status">Current Status</a><a href="#faq">FAQ</a><a href="#checklist">Checklist</a><a href="#quiz">Quiz</a><a href="#sources">Sources</a><a href="#see">See Also</a></aside>
 
 <main>
 <p class="crumb">Horror Wiki › Locations › 2025 Incidents</p>
@@ -141,6 +154,7 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <div class="card"><span class="tag">Visitor</span><h3>Fipters</h3><p>A guest who conversed with Martellos. Their presence suggests they may have been a witness.</p></div>
 <div class="card"><span class="tag">Unknown</span><h3>The Bald Man</h3><p>A mysterious figure who apparently “knows” the area and is tied to the escalating situation.</p></div>
 <div class="card"><span class="tag">Entity?</span><h3>The Goon Room</h3><p>Associated with the secret chair room and the “goon corner.” Its nature is unclear, but it unsettles visitors.</p></div>
+<div class="card"><span class="tag">Mentioned</span><h3>Barry</h3><p>Named in Log 02 as someone who may “get” the gun if Martellos can't fix it. Identity and role unknown; possibly the person the bald man “knows.”</p></div>
 </div>
 </section>
 
@@ -162,6 +176,84 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <p>Chat logs reference the space with phrases like “goon corner” and “IT IS THAT ROOM MAM,” suggesting both familiarity with and unease about it.</p>
 </section>
 
+<section id="analysis">
+<h2>Evidence Analysis</h2>
+<p>A closer look at the three recovered logs. Counts below come directly from the transcripts on this page.</p>
+<div class="nums"><div><b>3</b><span>Recovered logs</span></div><div><b>29</b><span>Total messages</span></div><div><b>2</b><span>Speakers</span></div><div><b>3</b><span>All-caps lines</span></div></div>
+<h3>Messages by speaker</h3>
+<div class="stat"><span>martellos</span><div class="trk"><i style="--w:76"></i></div><b>22</b></div>
+<div class="stat"><span>Fipters</span><div class="trk"><i style="--w:24"></i></div><b>7</b></div>
+<h3>Messages by log</h3>
+<div class="stat"><span>Log 01</span><div class="trk"><i style="--w:67"></i></div><b>8</b></div>
+<div class="stat"><span>Log 02</span><div class="trk"><i style="--w:75"></i></div><b>9</b></div>
+<div class="stat"><span>Log 03</span><div class="trk"><i style="--w:100"></i></div><b>12</b></div>
+<h3>Log comparison</h3>
+<div class="tbl"><table><tr><th>Log</th><th>Tone</th><th>Speakers</th><th>Key detail</th><th>Reliability</th></tr>
+<tr><td>01</td><td>Cryptic, calm</td><td>martellos, Fipters</td><td>Documents to be revealed at “the meeting”</td><td><span class="pill sus">Unverified</span></td></tr>
+<tr><td>02</td><td>Panicked, fragmented</td><td>martellos only</td><td>Broken gun, Barry, the bald man</td><td><span class="pill sus">Unverified</span></td></tr>
+<tr><td>03</td><td>Friendly, casual</td><td>martellos, Fipters</td><td>Invitation to stay; Fipters wants to meet the architect</td><td><span class="pill sus">Unverified</span></td></tr></table></div>
+<p>None of the logs carry timestamps, so their order is inferred from content. Log 02 is the only one with no reply from a second person.</p>
+</section>
+
+<section id="rooms">
+<h2>Rooms &amp; Areas</h2>
+<div class="tbl"><table><tr><th>Area</th><th>What we know</th><th>Status</th></tr>
+<tr><td>Roof</td><td>Aerial observation shows no rooms or living space.</td><td><span class="pill ok">Observed</span></td></tr>
+<tr><td>Secret Chair Room</td><td>Hidden chamber with a single central chair, reached via hidden passages.</td><td><span class="pill ok">Witnessed</span></td></tr>
+<tr><td>Guest rooms</td><td>Martellos says the manor has “lots of free rooms.”</td><td><span class="pill sus">Claimed</span></td></tr>
+<tr><td>The surrounding area</td><td>Said to be where the bald man “lurks.”</td><td><span class="pill sus">Claimed</span></td></tr>
+<tr><td>The architect’s identity</td><td>Unknown; Fipters asked to meet them.</td><td><span class="pill no">Unknown</span></td></tr></table></div>
+</section>
+
+<section id="quotes">
+<h2>Notable Quotes</h2>
+<div class="qt">
+<p>“FIX MY GUN.”<small>martellos · Log 02</small></p>
+<p>“The bald man knows him.”<small>martellos · Log 02</small></p>
+<p>“Everyone Is gone… except some.”<small>martellos · Log 02</small></p>
+<p>“that will be revealed on the meeting”<small>martellos · Log 01</small></p>
+<p>“It has lots of free rooms.”<small>martellos · Log 03</small></p>
+<p>“I love the design and would like to meet the architect himself.”<small>Fipters · Log 03</small></p>
+</div>
+</section>
+
+<section id="questions">
+<h2>Open Questions</h2>
+<p>Gaps the existing evidence leaves unresolved:</p>
+<ol class="q">
+<li>What was the “meeting” Martellos said would reveal what the documents contain, and did it happen?</li>
+<li>What were the “undefined house bills,” and what else was in that file?</li>
+<li>Who is Barry, and why would he “get” the gun?</li>
+<li>Why does the bald man know the area, and who does he know?</li>
+<li>Who is “everyone” that is gone, and who are the “some” that remain?</li>
+<li>Who is the architect Fipters wants to meet, and is that Martellos himself?</li>
+<li>Why does a roof with no rooms exist, and what is the chair room for?</li>
+</ol>
+</section>
+
+<section id="theories">
+<h2>Theories</h2>
+<div class="alert"><b>⚠ Speculation</b>These are community interpretations of the logs above, not confirmed facts.</div>
+<div class="cards">
+<div class="card"><span class="tag">Theory 1<span class="badge">Unconfirmed</span></span><h3>The Staged Meeting</h3><p>The “meeting” and the documents were a setup to gather guests at the manor, tying the invitation to sleep over back to the June 19th events.</p></div>
+<div class="card"><span class="tag">Theory 2<span class="badge">Unconfirmed</span></span><h3>Martellos Is the Architect</h3><p>Fipters asks to meet the architect, and Martellos owns an oddly designed house. The builder and the owner may be the same person.</p></div>
+<div class="card"><span class="tag">Theory 3<span class="badge">Unconfirmed</span></span><h3>The Chair Is a Trap</h3><p>A lone chair in a hidden room suggests a place meant for someone to be sat down, observed, or waited on.</p></div>
+<div class="card"><span class="tag">Theory 4<span class="badge">Unconfirmed</span></span><h3>Barry Is the Bald Man</h3><p>Martellos says the bald man “knows him” and that he “lurks.” Barry may be a separate threat, or another name for the same figure.</p></div>
+</div>
+</section>
+
+<section id="glossary">
+<h2>Glossary</h2>
+<dl class="g">
+<dt>The Horrors</dt><dd>The events at the manor on June 19, 2025, at 21:47.</dd>
+<dt>Goon room</dt><dd>Nickname for the Secret Chair Room, a hidden chamber holding a single chair.</dd>
+<dt>Goon corner</dt><dd>Alternate name for the same space, used in logs.</dd>
+<dt>The meeting</dt><dd>An upcoming gathering Martellos says will reveal the contents of the documents.</dd>
+<dt>The bald man</dt><dd>An unidentified figure said to lurk in the area and to know Barry.</dd>
+<dt>Fipters</dt><dd>A visitor and the manor's most frequent chat partner.</dd>
+</dl>
+</section>
+
 <section id="timeline">
 <h2>Timeline</h2>
 <ol class="tl">
@@ -176,6 +268,43 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <h2>Current Status</h2>
 <p>The manor remains active per recent reports, though its location is still unknown. The events of June 19th have entered internet folklore, and the phrase “The Horrors from 19th of june 21:47 2025 will never be forgotten” is now tied to the incident.</p>
 <p>Martellos continues to invite visitors and discuss architectural modifications, and the chair room adds a new layer of mystery. No official investigation has been confirmed, and what truly happened remains a mystery.</p>
+</section>
+
+<section id="faq">
+<h2>FAQ</h2>
+<details class="faq"><summary>Where is Martellos Manor?</summary><p>Unknown. No public information confirms its location.</p></details>
+<details class="faq"><summary>What happened on June 19, 2025?</summary><p>“The Horrors” at 21:47. Details are limited to fragmentary chat logs mentioning weapons, a malfunction, and the bald man.</p></details>
+<details class="faq"><summary>Is the manor still active?</summary><p>Yes, per recent reports. Martellos is still inviting visitors.</p></details>
+<details class="faq"><summary>What is the goon room?</summary><p>A secret room with only a chair, also called the “goon corner.” Its purpose is unknown.</p></details>
+<details class="faq"><summary>Was there an official investigation?</summary><p>None has been confirmed.</p></details>
+<details class="faq"><summary>Can I add to this wiki?</summary><p>Yes. Share new logs, sightings, or corrections, and mark anything unverified as such.</p></details>
+</section>
+
+<section id="checklist">
+<h2>Investigator’s Checklist</h2>
+<p>Open leads still worth chasing. Tick them off as you go.</p>
+<div class="chk">
+<label><input type="checkbox"><span>Find out what the “meeting” was and when it took place</span></label>
+<label><input type="checkbox"><span>Identify Barry</span></label>
+<label><input type="checkbox"><span>Identify the bald man</span></label>
+<label><input type="checkbox"><span>Locate the entrance to the Secret Chair Room</span></label>
+<label><input type="checkbox"><span>Learn what the “house bills” document contains</span></label>
+<label><input type="checkbox"><span>Find the architect</span></label>
+<label><input type="checkbox"><span>Confirm the manor’s location</span></label>
+</div>
+<div id="prog">0 of 7 leads resolved</div>
+</section>
+
+<section id="quiz">
+<h2>Test Your Knowledge</h2>
+<div id="qzbox"></div>
+<p id="score"></p>
+</section>
+
+<section id="sources">
+<h2>Sources</h2>
+<ol class="b"><li>Log 01 · Chat export, “before the meeting”</li><li>Log 02 · Chat export, “deterioration”</li><li>Log 03 · Chat export, “the invitation”</li><li>Manor description text (source of the 21:47 quote)</li><li>Aerial observations of the roof (reported)</li></ol>
+<p>All sources are unverified community material.</p>
 </section>
 
 <section id="see">
@@ -193,6 +322,9 @@ addEventListener('scroll',function(){var h=document.documentElement;bar.style.wi
 var links=[].slice.call(document.querySelectorAll('aside a'));
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('main [id]').forEach(function(s){io.observe(s)});
+var cb=[].slice.call(document.querySelectorAll('.chk input'));cb.forEach(function(c){c.onchange=function(){document.getElementById('prog').textContent=cb.filter(function(x){return x.checked}).length+' of '+cb.length+' leads resolved'}});
+var Q=[['What time did The Horrors occur?',['21:47','19:47','21:14']],['What does Martellos say he must fix?',['His gun','The roof','The chair']],['What is in the Secret Chair Room?',['A single chair','A bed','A desk']],['Who does Fipters want to meet?',['The architect','The bald man','Barry']]];var got=0,done=0,box=document.getElementById('qzbox');
+Q.forEach(function(q){var d=document.createElement('div');d.className='qz';var h=document.createElement('h3');h.textContent=q[0];d.appendChild(h);q[1].map(function(t,i){return[t,i]}).sort(function(){return Math.random()-.5}).forEach(function(o){var b=document.createElement('button');b.textContent=o[0];b.onclick=function(){if(d.dataset.d)return;d.dataset.d=1;done++;if(o[1]===0){got++;b.className='right'}else{b.className='wrong';[].forEach.call(d.querySelectorAll('button'),function(x){if(x.textContent===q[1][0])x.className='right'})}if(done===Q.length)document.getElementById('score').textContent='Score: '+got+' / '+Q.length};d.appendChild(b)});box.appendChild(d)});
 document.getElementById('theme').onclick=function(){
 var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
 r.dataset.theme=dark?'light':'dark'};
