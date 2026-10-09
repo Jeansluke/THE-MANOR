@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Martellos Manor | Horror Wiki</title>
+<style>
+:root{--bg:#f1ebe0;--panel:#fbf7ef;--panel2:#e9e1d1;--ink:#241c1a;--mute:#6b5f58;--line:#d3c8b4;--red:#a4161a;--glow:rgba(164,22,26,.15);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0909;--panel:#151110;--panel2:#1d1716;--ink:#ece4dc;--mute:#9a8c84;--line:#2e2422;--red:#e0373c;--glow:rgba(224,55,60,.18)}}
+:root[data-theme="dark"]{--bg:#0b0909;--panel:#151110;--panel2:#1d1716;--ink:#ece4dc;--mute:#9a8c84;--line:#2e2422;--red:#e0373c;--glow:rgba(224,55,60,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font:17px/1.7 Georgia,'Times New Roman',serif;background-image:radial-gradient(ellipse at 50% -10%,var(--glow),transparent 60%)}
+a{color:var(--red)}
+h1,h2,h3,.ui{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:20}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:12px 20px}
+.logo{font:800 18px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red);text-decoration:none}
+nav{display:flex;gap:18px;overflow-x:auto;flex:1;scrollbar-width:none}
+nav a{font:500 14px system-ui,sans-serif;color:var(--mute);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--red)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:5px 12px;font:13px system-ui,sans-serif;cursor:pointer}
+.wrap{max-width:1180px;margin:auto;display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px;padding:36px 20px 80px}
+aside{position:sticky;top:90px;align-self:start;font:14px system-ui,sans-serif}
+aside h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+aside a{display:block;padding:5px 0 5px 12px;border-left:2px solid var(--line);color:var(--mute);text-decoration:none}
+aside a.on,aside a:hover{border-color:var(--red);color:var(--ink)}
+.crumb{font:13px system-ui,sans-serif;color:var(--mute);margin-bottom:6px}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.02em;animation:flick 6s infinite}
+@keyframes flick{0%,92%,96%,100%{opacity:1}93%{opacity:.55}95%{opacity:.8}}
+.tagline{color:var(--mute);font-style:italic;margin:10px 0 24px;font-size:19px}
+.alert{border:1px solid var(--red);border-left-width:5px;background:var(--glow);border-radius:8px;padding:14px 18px;margin:18px 0;font:15px/1.55 system-ui,sans-serif}
+.alert b{color:var(--red);display:block;margin-bottom:2px;letter-spacing:.04em}
+.top{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.infobox{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font:14px system-ui,sans-serif;box-shadow:0 8px 30px var(--glow)}
+.infobox h3{background:var(--red);color:#fff;text-align:center;padding:10px;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.infobox svg{display:block;width:100%;background:#0d0a0a}
+.row{display:flex;justify-content:space-between;gap:14px;padding:9px 16px;border-top:1px solid var(--line)}
+.row span:first-child{color:var(--mute)}.row span:last-child{text-align:right;font-weight:600}
+.lede p{margin-bottom:14px}
+section{margin-top:48px}
+h2{font-size:27px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:8px;height:22px;background:var(--red);border-radius:2px}
+h3{font-size:19px;margin:20px 0 6px}
+section p{margin-bottom:14px}
+blockquote{margin:22px 0;padding:18px 22px;border-left:4px solid var(--red);background:var(--panel);border-radius:0 10px 10px 0;font-size:21px;font-style:italic}
+blockquote cite{display:block;font:13px system-ui,sans-serif;color:var(--mute);margin-top:6px;font-style:normal}
+ul.b{margin:0 0 16px 22px}ul.b li{margin-bottom:6px}
+.chat{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:18px 0;overflow:hidden;font:14.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+.chat>summary{cursor:pointer;padding:10px 16px;background:var(--panel2);font:600 12px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);list-style:none}
+.chat>summary::before{content:"▸ "}.chat[open]>summary::before{content:"▾ "}
+.msgs{padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.m b{color:var(--red)}.m.f b{color:#3b82c4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .m.f b{color:#6fb1ee}}
+:root[data-theme="dark"] .m.f b{color:#6fb1ee}
+.m.loud{font-weight:700;letter-spacing:.04em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--red)}
+.card .tag{font:700 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.card h3{margin:6px 0}.card p{font-size:15px;margin:0;color:var(--mute)}
+.tl{list-style:none;border-left:2px solid var(--line);margin-left:6px}
+.tl li{position:relative;padding:0 0 22px 26px}
+.tl li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--glow)}
+.tl time{font:700 13px system-ui,sans-serif;color:var(--red)}
+.see{display:flex;flex-wrap:wrap;gap:10px}
+.see a{font:14px system-ui,sans-serif;padding:7px 14px;border:1px solid var(--line);border-radius:20px;text-decoration:none;background:var(--panel)}
+.see a:hover{border-color:var(--red)}
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--mute);font:13px system-ui,sans-serif}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}aside{display:none}.top{grid-template-columns:1fr}.infobox{order:-1}.logo{display:none}}
+@media(prefers-reduced-motion:reduce){h1{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="hd">
+<a class="logo" href="#top">Horror Wiki</a>
+<nav><a href="#overview">Overview</a><a href="#incident">Incident</a><a href="#evidence">Evidence</a><a href="#figures">Figures</a><a href="#layout">Layout</a><a href="#timeline">Timeline</a><a href="#status">Status</a></nav>
+<button id="theme" class="ui" aria-label="Toggle theme">◐ Theme</button>
+</div></header>
+
+<div class="wrap" id="top">
+<aside><h4>On this page</h4>
+<a href="#overview">Overview</a><a href="#incident">The June 19th Incident</a><a href="#evidence">Chat Log Evidence</a><a href="#figures">Key Figures</a><a href="#recent">Recent Developments</a><a href="#layout">Layout &amp; Architecture</a><a href="#timeline">Timeline</a><a href="#status">Current Status</a><a href="#see">See Also</a></aside>
+
+<main>
+<p class="crumb">Horror Wiki › Locations › 2025 Incidents</p>
+<h1>Martellos Manor</h1>
+<p class="tagline">“The Horrors from 19th of june 21:47 2025 will never be forgotten.”</p>
+
+<div class="alert"><b>⚠ Work in progress</b>This article is being updated as we speak. A lot of the information here is true.</div>
+<div class="alert"><b>⚠ Content warning</b>Contains descriptions of disturbing events and violent content related to the incidents at Martellos Manor on June 19, 2025.</div>
+
+<div class="top">
+<div class="lede" id="overview">
+<p><strong>Martellos Manor</strong> is a private residence owned by an individual known only as “Martellos.” It gained notoriety after the events of June 19, 2025, at 21:47 (9:47 PM), and has since become the subject of intense speculation and investigation in online communities.</p>
+<p>The property appears to be a secluded estate, though its exact location is unknown to the public. What is known comes primarily from chat logs and testimonies of people who claim to have been present.</p>
+</div>
+<div class="infobox">
+<h3>Martellos Manor</h3>
+<svg viewBox="0 0 300 190" role="img" aria-label="Silhouette of the manor under a pale moon">
+<rect width="300" height="190" fill="#0d0a0a"/><circle cx="238" cy="42" r="20" fill="#e8dccb" opacity=".9"/>
+<g fill="#050404"><path d="M40 190V104l30-26 30 26v-20h24V60l30-30 30 30v24h24v20l30-26 30 26v86z"/></g>
+<g fill="#e0373c"><rect x="132" y="92" width="10" height="16" opacity=".9"/><rect x="62" y="124" width="9" height="14" opacity=".35"/><rect x="226" y="124" width="9" height="14" opacity=".5"/></g>
+<rect x="148" y="150" width="16" height="40" fill="#1d1211"/>
+</svg>
+<div class="row"><span>Type</span><span>Private Residence</span></div>
+<div class="row"><span>Owner</span><span>Martellos</span></div>
+<div class="row"><span>Location</span><span>Unknown</span></div>
+<div class="row"><span>Status</span><span>Active</span></div>
+<div class="row"><span>Notable date</span><span>June 19, 2025</span></div>
+<div class="row"><span>Architecture</span><span>Unusual design</span></div>
+<div class="row"><span>Special rooms</span><span>Secret Chair Room (“the goon room”)</span></div>
+</div>
+</div>
+
+<section id="incident">
+<h2>The June 19th Incident</h2>
+<p>On June 19, 2025, at approximately 21:47, a series of disturbing events occurred at Martellos Manor, later referred to as “The Horrors.” The incident involved multiple individuals, including someone called “Fipters” and “the bald man.”</p>
+<blockquote>The Horrors from 19th of june 21:47 2025 will never be forgotten.<cite>— Manor description</cite></blockquote>
+<p>According to recovered chat logs, the situation escalated quickly, with references to weapons, threats, and a general atmosphere of terror. The exact nature of what happened remains unclear, but witness accounts suggest:</p>
+<ul class="b"><li>Multiple individuals in conflict</li><li>References to weapons and violence</li><li>A mysterious “bald man” who appeared to know the location</li><li>Attempts to fix some kind of equipment malfunction</li></ul>
+</section>
+
+<section id="evidence">
+<h2>Chat Log Evidence</h2>
+<p>The primary evidence comes from chat logs recovered from the scene: a fragmented but unsettling glimpse into events. Tap a log to expand or collapse it.</p>
+<details class="chat" open><summary>Log 01 · Before the meeting</summary><div class="msgs">
+<div class="m"><b>martellos</b>: I showed?</div><div class="m"><b>martellos</b>: It includes more than just</div><div class="m"><b>martellos</b>: undefined house bills</div><div class="m f"><b>Fipters</b>: hmm</div><div class="m"><b>martellos</b>: It contains stuff.</div><div class="m f"><b>Fipters</b>: what stuff</div><div class="m"><b>martellos</b>: that will be revealed on the meeting</div><div class="m"><b>martellos</b>: That will happen soon.</div></div></details>
+<p>Later logs show the situation deteriorating rapidly:</p>
+<details class="chat" open><summary>Log 02 · Deterioration</summary><div class="msgs">
+<div class="m loud"><b>martellos</b>: I NEED</div><div class="m loud"><b>martellos</b>: TO</div><div class="m loud"><b>martellos</b>: FIX MY GUN.</div><div class="m"><b>martellos</b>: Or barry gona get it</div><div class="m"><b>martellos</b>: The bald man knows him</div><div class="m"><b>martellos</b>: He lurks within this area</div><div class="m"><b>martellos</b>: Yet as I said,</div><div class="m"><b>martellos</b>: Everyone Is gone</div><div class="m"><b>martellos</b>: except some</div></div></details>
+</section>
+
+<section id="figures">
+<h2>Key Figures</h2>
+<div class="cards">
+<div class="card"><span class="tag">Owner</span><h3>Martellos</h3><p>Central figure of the incident. Logs suggest he was dealing with an equipment malfunction and grew increasingly agitated.</p></div>
+<div class="card"><span class="tag">Visitor</span><h3>Fipters</h3><p>A guest who conversed with Martellos. Their presence suggests they may have been a witness.</p></div>
+<div class="card"><span class="tag">Unknown</span><h3>The Bald Man</h3><p>A mysterious figure who apparently “knows” the area and is tied to the escalating situation.</p></div>
+<div class="card"><span class="tag">Entity?</span><h3>The Goon Room</h3><p>Associated with the secret chair room and the “goon corner.” Its nature is unclear, but it unsettles visitors.</p></div>
+</div>
+</section>
+
+<section id="recent">
+<h2>Recent Developments</h2>
+<p>New evidence reveals more about the manor's layout and activities. Recent logs show continued contact between Martellos and visitors, including talk of accommodations and architectural plans.</p>
+<details class="chat"><summary>Log 03 · The invitation</summary><div class="msgs">
+<div class="m f"><b>Fipters</b>: camp</div><div class="m"><b>martellos</b>: man.</div><div class="m"><b>martellos</b>: y'all need some bunk beds or smth!</div><div class="m"><b>martellos</b>: I got an idea.</div><div class="m f"><b>Fipters</b>: no need</div><div class="m"><b>martellos</b>: How about..</div><div class="m"><b>martellos</b>: Y'all sleep at the manor?</div><div class="m"><b>martellos</b>: It has lots of free rooms.</div><div class="m f"><b>Fipters</b>: hmm</div><div class="m f"><b>Fipters</b>: okay</div><div class="m"><b>martellos</b>: Great!</div><div class="m f"><b>Fipters</b>: I love the design and would like to meet the architect himself</div></div></details>
+</section>
+
+<section id="layout">
+<h2>Manor Layout &amp; Architecture</h2>
+<p>Recent reconnaissance has revealed unsettling details about the construction and room arrangement. The building seems designed with specific purposes in mind, though the architect's identity is unknown.</p>
+<h3>The Roof Situation</h3>
+<p>Aerial observations confirm the roof contains no traditional rooms or living spaces, raising questions about the building's intended use and structural integrity.</p>
+<h3>The Secret Chair Room</h3>
+<p>Most disturbing is the “goon room”: a secret chamber containing nothing but a single chair at its center, reached through hidden passages and serving an unknown purpose.</p>
+<div class="alert"><b>⚠ Investigation alert</b>The purpose of the chair room remains unclear. Witnesses report an unsettling atmosphere and nicknamed it the “goon corner.” Its sparse furnishing and hidden location suggest a specific, undisclosed function.</div>
+<p>Chat logs reference the space with phrases like “goon corner” and “IT IS THAT ROOM MAM,” suggesting both familiarity with and unease about it.</p>
+</section>
+
+<section id="timeline">
+<h2>Timeline</h2>
+<ol class="tl">
+<li><time>June 19, 2025 · 21:47</time><br>“The Horrors” occur at the manor.</li>
+<li><time>Following logs</time><br>Martellos tries to fix his gun, mentions the bald man, and says everyone is gone “except some.”</li>
+<li><time>Later</time><br>Martellos invites Fipters and others to sleep at the manor.</li>
+<li><time>Recent</time><br>Aerial recon finds a roof with no rooms; the Secret Chair Room is discovered.</li>
+</ol>
+</section>
+
+<section id="status">
+<h2>Current Status</h2>
+<p>The manor remains active per recent reports, though its location is still unknown. The events of June 19th have entered internet folklore, and the phrase “The Horrors from 19th of june 21:47 2025 will never be forgotten” is now tied to the incident.</p>
+<p>Martellos continues to invite visitors and discuss architectural modifications, and the chair room adds a new layer of mystery. No official investigation has been confirmed, and what truly happened remains a mystery.</p>
+</section>
+
+<section id="see">
+<h2>See Also</h2>
+<div class="see"><a href="#">Unexplained Incidents of 2025</a><a href="#">Private Estate Mysteries</a><a href="#">Online Horror Communities</a><a href="#">Haunted Locations</a><a href="#">Unsolved Cases</a></div>
+</section>
+</main>
+</div>
+<footer>Martellos Manor · Horror Wiki · Content is community-written and may be incomplete.</footer>
+
+<script>
+(function(){
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+var links=[].slice.call(document.querySelectorAll('aside a'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('main [id]').forEach(function(s){io.observe(s)});
+document.getElementById('theme').onclick=function(){
+var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+r.dataset.theme=dark?'light':'dark'};
+})();
+</script>
+</body>
+</html>
